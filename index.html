@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高師大諮商所複試｜英文摘要 20 日研讀與口試應答教練互動電子書</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f3ff',
+                            100: '#e0e7ff',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            800: '#3730a3',
+                            900: '#312e81',
+                            950: '#1e1b4b',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Roboto+Flex:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Roboto Flex', 'Noto Sans TC', sans-serif; }
+        .word-highlight {
+            cursor: pointer;
+            background-color: #fef08a;
+            border-bottom: 2px dashed #ca8a04;
+            padding: 2px 5px;
+            border-radius: 4px;
+            transition: all 0.2s ease-in-out;
+            display: inline-block;
+            line-height: 1.4;
+            color: #1e293b;
+        }
+        .dark .word-highlight {
+            background-color: #854d0e;
+            border-bottom-color: #fde047;
+            color: #fef08a;
+        }
+        .word-highlight:hover {
+            background-color: #fde047;
+            color: #854d0e;
+            transform: translateY(-1px);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+        }
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        .dark .custom-scrollbar::-webkit-scrollbar-thumb { background: #475569; }
+        
+        /* 3D Flip Card Animation */
+        .perspective-1000 { perspective: 1000px; }
+        .transform-style-3d { transform-style: preserve-3d; }
+        .backface-hidden { backface-visibility: hidden; }
+        .rotate-y-180 { transform: rotateY(180deg); }
+    </style>
+</head>
+<body class="bg-slate-100 dark:bg-slate-950 text-slate-800 dark:text-slate-100 min-h-screen flex flex-col transition-colors duration-200">
+
+    <!-- Top Header -->
+    <header class="bg-indigo-900 dark:bg-slate-900 text-white shadow-lg sticky top-0 z-30 border-b border-indigo-800 dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <i class="fa-solid fa-book-open-reader text-2xl text-amber-400"></i>
+                <div>
+                    <h1 class="text-lg md:text-xl font-bold tracking-wide flex items-center gap-2">
+                        高師大諮商所複試 20 日研讀互動電子書
+                        <span class="text-xs font-normal bg-amber-400/20 text-amber-300 border border-amber-400/30 px-2 py-0.5 rounded-full hidden lg:inline-block">口試模擬考場・朗讀發音・單字卡</span>
+                    </h1>
+                    <p class="text-xs text-indigo-200 dark:text-slate-400">當代諮商學術摘要・音標發音・高師大口試三段式應答架構</p>
+                </div>
+            </div>
+            
+            <div class="flex items-center space-x-2 md:space-x-4">
+                <!-- Mode Switching Modals Trigger Buttons -->
+                <button onclick="openFlashcardModal()" class="text-xs bg-indigo-800/80 hover:bg-indigo-700 text-amber-300 px-2.5 py-1.5 rounded-lg border border-indigo-700 flex items-center gap-1.5 transition">
+                    <i class="fa-solid fa-layer-group text-sm"></i> <span class="hidden sm:inline">單字刷題卡</span>
+                </button>
+                
+                <button onclick="openMockExamModal()" class="text-xs bg-amber-500 hover:bg-amber-600 text-indigo-950 font-bold px-2.5 py-1.5 rounded-lg flex items-center gap-1.5 shadow transition">
+                    <i class="fa-solid fa-headset text-sm"></i> <span class="hidden sm:inline">模擬口試考場</span>
+                </button>
+
+                <!-- Dark Mode Toggle -->
+                <button id="theme-toggle" class="p-2 text-indigo-200 hover:text-white rounded-lg hover:bg-indigo-800/50 transition">
+                    <i id="theme-toggle-icon" class="fa-solid fa-moon text-base"></i>
+                </button>
+
+                <!-- Sidebar Toggle Mobile -->
+                <button id="toggle-sidebar-btn" class="md:hidden text-indigo-200 hover:text-white p-2 rounded-lg bg-indigo-800/50">
+                    <i class="fa-solid fa-bars text-lg"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="max-w-7xl mx-auto w-full flex-1 flex flex-col md:flex-row overflow-hidden my-3 px-2 md:px-4 gap-4">
+        
+        <!-- Sidebar - Article List & Filters -->
+        <aside id="sidebar" class="w-full md:w-80 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 flex flex-col h-[calc(100vh-100px)] transition-all duration-300 z-20">
+            <div class="p-3.5 border-b border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/50 rounded-t-xl space-y-2.5">
+                <div class="relative">
+                    <input type="text" id="search-input" placeholder="搜尋關鍵字、專有名詞或學派..." 
+                        class="w-full pl-9 pr-4 py-2 text-xs md:text-sm bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-slate-800 dark:text-slate-100 shadow-sm">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3 top-3 text-slate-400 text-xs"></i>
+                </div>
+
+                <!-- Domain Filter Dropdown -->
+                <div class="flex gap-2">
+                    <select id="domain-filter" class="w-full text-xs bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg px-2 py-1.5 text-slate-700 dark:text-slate-200 focus:outline-none">
+                        <option value="ALL">全部學術領域 (20天)</option>
+                        <option value="FAVORITES">⭐ 我的星號收藏</option>
+                        <!-- Injected via JS -->
+                    </select>
+                </div>
+
+                <div class="flex justify-between items-center text-xs text-slate-500 dark:text-slate-400 px-1 pt-1">
+                    <span id="progress-text" class="font-semibold text-indigo-600 dark:text-amber-400">進度: 0/20 (0%)</span>
+                    <button id="reset-progress-btn" class="text-slate-400 hover:text-rose-500 text-[11px] transition">重置紀錄</button>
+                </div>
+            </div>
+
+            <!-- List of Days -->
+            <div id="article-list" class="flex-1 overflow-y-auto custom-scrollbar p-2 space-y-1.5">
+                <!-- Injected via JavaScript -->
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="flex-1 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 flex flex-col h-[calc(100vh-100px)] overflow-hidden">
+            <div id="article-view" class="flex-1 overflow-y-auto custom-scrollbar p-4 md:p-6 space-y-6">
+                
+                <!-- Article Header -->
+                <div id="article-header" class="border-b border-slate-100 dark:border-slate-800 pb-4">
+                    <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                        <div class="flex items-center gap-2">
+                            <span id="article-day" class="px-3 py-1 bg-indigo-100 dark:bg-indigo-950 text-indigo-800 dark:text-indigo-300 text-xs font-bold rounded-full border border-indigo-200 dark:border-indigo-800">Day 1</span>
+                            <span id="article-domain" class="px-3 py-1 bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 text-xs font-medium rounded-full border border-emerald-200 dark:border-emerald-800">領域</span>
+                        </div>
+
+                        <div class="flex items-center gap-2 ml-auto">
+                            <!-- Favorite Bookmark Button -->
+                            <button id="star-btn" class="p-1.5 rounded-lg border border-slate-200 dark:border-slate-700 text-slate-400 hover:text-amber-500 transition" title="收藏此篇">
+                                <i class="fa-star text-base" id="star-icon"></i>
+                            </button>
+
+                            <label class="flex items-center space-x-2 cursor-pointer bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-3 py-1 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700/50">
+                                <input type="checkbox" id="mark-complete-checkbox" class="w-4 h-4 text-indigo-600 rounded focus:ring-indigo-500">
+                                <span class="text-xs font-medium text-slate-700 dark:text-slate-300">今日完成打卡</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <h2 id="article-title" class="text-xl md:text-2xl font-bold text-slate-900 dark:text-slate-100 leading-snug">
+                        <!-- Injected -->
+                    </h2>
+                    <p id="article-journal" class="text-xs text-slate-500 dark:text-slate-400 mt-1 italic">Journal of Counseling Psychology (2025)</p>
+                </div>
+
+                <!-- Reading Mode & Speech Speed Bar -->
+                <div class="bg-amber-50 dark:bg-amber-950/40 border-l-4 border-amber-400 dark:border-amber-500 p-3.5 rounded-r-lg text-xs text-amber-950 dark:text-amber-200 flex flex-wrap items-center justify-between gap-2 shadow-xs">
+                    <div class="flex items-center space-x-2.5">
+                        <i class="fa-solid fa-lightbulb text-amber-500 text-base flex-shrink-0"></i>
+                        <span class="leading-relaxed">
+                            點擊英文摘要中<mark class="bg-yellow-200 dark:bg-yellow-800 dark:text-yellow-100 px-1.5 py-0.5 rounded font-medium">黃色底線專有名詞</mark>收聽 KK 音標與發音釋義。
+                        </span>
+                    </div>
+
+                    <!-- TTS Speed Control -->
+                    <div class="flex items-center space-x-2 bg-amber-100/60 dark:bg-amber-900/40 px-2.5 py-1 rounded-md border border-amber-300/50">
+                        <span class="text-[11px] font-semibold text-amber-900 dark:text-amber-300">朗讀語速:</span>
+                        <select id="tts-speed" class="bg-transparent font-bold text-indigo-900 dark:text-amber-300 text-xs focus:outline-none">
+                            <option value="0.75">0.75x (慢速)</option>
+                            <option value="0.9" selected>0.9x (標準)</option>
+                            <option value="1.1">1.1x (快速)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- English Abstract Block -->
+                <div class="bg-slate-50 dark:bg-slate-800/60 rounded-xl p-5 border border-slate-200 dark:border-slate-700/80 space-y-3 shadow-inner">
+                    <div class="flex justify-between items-center mb-1">
+                        <h3 class="text-sm font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider flex items-center">
+                            <i class="fa-solid fa-file-lines text-indigo-600 dark:text-indigo-400 mr-2"></i> Abstract (英文學術摘要)
+                        </h3>
+                        <button id="read-full-abstract-btn" class="text-xs bg-indigo-600 hover:bg-indigo-700 text-white px-3.5 py-1.5 rounded-lg transition shadow-xs flex items-center gap-1.5 font-medium">
+                            <i class="fa-solid fa-volume-high"></i> 朗讀全文 Abstract
+                        </button>
+                    </div>
+                    <p id="abstract-content" class="text-base text-slate-800 dark:text-slate-200 leading-relaxed font-serif">
+                        <!-- Interactive text injected here -->
+                    </p>
+                </div>
+
+                <!-- Terminology Breakdown Box -->
+                <div class="bg-white dark:bg-slate-900 rounded-xl border border-indigo-100 dark:border-slate-800 p-5 shadow-xs space-y-3">
+                    <h3 class="text-sm font-bold text-indigo-900 dark:text-indigo-300 uppercase tracking-wider flex items-center">
+                        <i class="fa-solid fa-spell-check text-indigo-600 mr-2"></i> 核心諮商專有名詞與音標解析 (點擊收聽發音)
+                    </h3>
+                    <div id="terms-list" class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                        <!-- Injected JS -->
+                    </div>
+                </div>
+
+                <!-- Interview Coaching & Response Template (高師大口試最佳應答) -->
+                <div class="bg-gradient-to-br from-indigo-950 via-indigo-900 to-slate-900 text-white rounded-xl p-5 md:p-6 shadow-md space-y-4 border border-indigo-800">
+                    <div class="flex items-center justify-between border-b border-indigo-700/60 pb-3">
+                        <h3 class="text-base font-bold text-amber-300 flex items-center">
+                            <i class="fa-solid fa-user-tie mr-2.5 text-amber-400"></i> 高師大複試口試最佳應答模組 (Interview Response)
+                        </h3>
+                        <span class="text-xs bg-amber-400/20 text-amber-300 px-2.5 py-0.5 rounded border border-amber-400/30 font-medium">黃金三段式答詢</span>
+                    </div>
+
+                    <!-- Structured Breakdowns -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs">
+                        <div class="bg-white/10 p-3.5 rounded-lg border border-white/10 space-y-1">
+                            <span class="text-indigo-300 font-semibold block text-[11px] uppercase tracking-wider">【1. 研究主題與背景】</span>
+                            <p id="resp-topic" class="text-slate-200 leading-relaxed">...</p>
+                        </div>
+                        <div class="bg-white/10 p-3.5 rounded-lg border border-white/10 space-y-1">
+                            <span class="text-indigo-300 font-semibold block text-[11px] uppercase tracking-wider">【2. 核心研究結果】</span>
+                            <p id="resp-finding" class="text-slate-200 leading-relaxed">...</p>
+                        </div>
+                        <div class="bg-white/10 p-3.5 rounded-lg border border-white/10 space-y-1">
+                            <span class="text-indigo-300 font-semibold block text-[11px] uppercase tracking-wider">【3. 諮商實務/概念化啟發】</span>
+                            <p id="resp-insight" class="text-slate-200 leading-relaxed">...</p>
+                        </div>
+                    </div>
+
+                    <!-- Full Script Demo -->
+                    <div class="bg-indigo-950/90 p-4 rounded-lg border border-indigo-700/60 space-y-2">
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs font-bold text-amber-400 uppercase tracking-wide flex items-center gap-1.5">
+                                <i class="fa-solid fa-comment-dots"></i> 口試現場完整中文答詢擬真示範
+                            </span>
+                            <button id="read-script-btn" class="text-xs text-indigo-300 hover:text-white bg-indigo-800/60 hover:bg-indigo-800 px-3 py-1 rounded transition flex items-center gap-1">
+                                <i class="fa-solid fa-circle-play"></i> 朗讀講稿範例
+                            </button>
+                        </div>
+                        <p id="resp-script" class="text-sm text-slate-100 leading-relaxed font-sans">
+                            <!-- Script Injected -->
+                        </p>
+                    </div>
+
+                    <!-- Candidate Custom Notes Box -->
+                    <div class="pt-2">
+                        <label class="block text-xs font-bold text-indigo-300 mb-1 flex items-center gap-1.5">
+                            <i class="fa-solid fa-pen-to-square"></i> 我的口試客製化答詢筆記 (結合個人經驗/研究興趣)：
+                        </label>
+                        <textarea id="custom-note-input" rows="3" placeholder="點擊在此輸入你的客製化口試回答擬答，系統將自動為你儲存..."
+                            class="w-full text-xs p-3 rounded-lg bg-indigo-950/70 border border-indigo-700/60 text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-amber-400"></textarea>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Flashcard Modal -->
+    <div id="flashcard-modal" class="fixed inset-0 bg-slate-900/80 backdrop-blur-sm hidden z-50 flex items-center justify-center p-4">
+        <div class="bg-white dark:bg-slate-900 rounded-2xl max-w-lg w-full p-6 shadow-2xl border border-slate-200 dark:border-slate-800 space-y-4">
+            <div class="flex justify-between items-center border-b border-slate-100 dark:border-slate-800 pb-3">
+                <h3 class="font-bold text-slate-900 dark:text-slate-100 text-base flex items-center gap-2">
+                    <i class="fa-solid fa-layer-group text-indigo-600 dark:text-amber-400"></i> 諮商專有名詞單字刷題卡
+                </h3>
+                <button onclick="closeFlashcardModal()" class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 p-1"><i class="fa-solid fa-xmark text-lg"></i></button>
+            </div>
+
+            <!-- Flip Card Container -->
+            <div class="perspective-1000 w-full h-56 cursor-pointer" onclick="flipCard()">
+                <div id="flashcard-inner" class="relative w-full h-full transform-style-3d transition-transform duration-500 rounded-xl shadow-md border border-indigo-200 dark:border-indigo-800 bg-gradient-to-br from-indigo-50 to-indigo-100 dark:from-slate-800 dark:to-indigo-950 p-6 flex flex-col items-center justify-center text-center">
+                    <!-- Front Side -->
+                    <div class="absolute inset-0 backface-hidden flex flex-col items-center justify-center p-6 space-y-2">
+                        <span class="text-xs font-bold text-indigo-600 dark:text-indigo-400 uppercase tracking-widest">點擊卡片翻面看釋義</span>
+                        <h4 id="card-word" class="text-2xl font-bold text-slate-900 dark:text-amber-300">Term</h4>
+                        <p id="card-ipa" class="text-xs text-slate-500 dark:text-slate-400 font-mono">/ ipa /</p>
+                        <button onclick="event.stopPropagation(); speakCardWord()" class="mt-2 text-xs bg-indigo-600 text-white px-3 py-1 rounded-full hover:bg-indigo-700 transition">
+                            <i class="fa-solid fa-volume-high"></i> 發音
+                        </button>
+                    </div>
+                    <!-- Back Side -->
+                    <div class="absolute inset-0 backface-hidden rotate-y-180 flex flex-col items-center justify-center p-6 bg-indigo-900 text-white rounded-xl space-y-2">
+                        <span class="text-xs text-indigo-300 font-bold uppercase">中文釋義</span>
+                        <p id="card-def" class="text-base font-medium leading-relaxed">釋義與解析</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Controls -->
+            <div class="flex justify-between items-center text-xs text-slate-500 pt-2">
+                <button onclick="prevCard()" class="px-3 py-2 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-lg font-medium hover:bg-slate-200"><i class="fa-solid fa-chevron-left"></i> 上一張</button>
+                <span id="card-counter" class="font-mono">1 / 50</span>
+                <button onclick="nextCard()" class="px-3 py-2 bg-indigo-600 text-white rounded-lg font-medium hover:bg-indigo-700">下一張 <i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mock Exam Simulator Modal -->
+    <div id="mock-exam-modal" class="fixed inset-0 bg-slate-950/85 backdrop-blur-md hidden z-50 flex items-center justify-center p-4">
+        <div class="bg-indigo-950 text-white rounded-2xl max-w-xl w-full p-6 shadow-2xl border border-indigo-800 space-y-5">
+            <div class="flex justify-between items-center border-b border-indigo-800/80 pb-3">
+                <div class="flex items-center space-x-2">
+                    <span class="w-3 h-3 bg-red-500 rounded-full animate-pulse"></span>
+                    <h3 class="font-bold text-amber-300 text-base">高師大複試｜真人擬真口試模擬考場</h3>
+                </div>
+                <button onclick="closeMockExamModal()" class="text-slate-400 hover:text-white p-1"><i class="fa-solid fa-xmark text-lg"></i></button>
+            </div>
+
+            <!-- Question Prompt Box -->
+            <div class="bg-indigo-900/80 p-4 rounded-xl border border-indigo-700/60 space-y-2">
+                <span class="text-[11px] font-bold text-indigo-300 uppercase tracking-wider block">🎓 口試委員隨機抽考問句：</span>
+                <p id="exam-prompt" class="text-sm md:text-base font-semibold text-amber-200 leading-snug">
+                    "請針對此研究報告，用兩分鐘簡述其核心發現並說明對你未來心理諮商個案概念化的啟發。"
+                </p>
+                <div class="flex justify-end pt-1">
+                    <button onclick="randomizeExamQuestion()" class="text-xs text-amber-400 hover:underline flex items-center gap-1">
+                        <i class="fa-solid fa-shuffle"></i> 隨機換一題
+                    </button>
+                </div>
+            </div>
+
+            <!-- Timer & Audio Controls -->
+            <div class="bg-slate-900 p-4 rounded-xl border border-slate-800 flex flex-col items-center justify-center space-y-3">
+                <div class="text-3xl font-mono font-bold text-amber-400 tracking-wider" id="exam-timer">02:00</div>
+                <div class="flex gap-3">
+                    <button id="start-timer-btn" onclick="toggleExamTimer()" class="text-xs bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2 rounded-lg font-bold flex items-center gap-1.5 shadow">
+                        <i class="fa-solid fa-play"></i> 開始回答倒數
+                    </button>
+                    <button id="record-btn" onclick="toggleRecordAnswer()" class="text-xs bg-rose-600 hover:bg-rose-500 text-white px-4 py-2 rounded-lg font-bold flex items-center gap-1.5 shadow">
+                        <i class="fa-solid fa-microphone"></i> 錄音回答
+                    </button>
+                </div>
+                <!-- Audio playback element -->
+                <audio id="recording-playback" controls class="w-full hidden h-8 mt-2"></audio>
+            </div>
+
+            <div class="text-xs text-indigo-300 flex justify-between items-center">
+                <span>提示: 練習完畢後可對照標準模組評估順暢度。</span>
+                <button onclick="closeMockExamModal()" class="text-amber-400 font-bold hover:underline">結束練習</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Word Detail Popover -->
+    <div id="word-popover" class="fixed bottom-6 right-6 bg-slate-900 text-white p-4 rounded-xl shadow-2xl border border-slate-700 hidden z-50 max-w-sm w-full transition-all">
+        <div class="flex justify-between items-start mb-2">
+            <div>
+                <h4 id="pop-word" class="text-lg font-bold text-amber-300">Word</h4>
+                <span id="pop-ipa" class="text-xs text-indigo-300 font-mono">/ ipa /</span>
+            </div>
+            <button onclick="closePopover()" class="text-slate-400 hover:text-white p-1"><i class="fa-solid fa-xmark text-lg"></i></button>
+        </div>
+        <p id="pop-def" class="text-sm text-slate-200 mb-3 leading-relaxed">中文釋義</p>
+        <button id="pop-audio-btn" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white text-xs py-2 rounded-lg flex items-center justify-center gap-1.5 font-medium shadow">
+            <i class="fa-solid fa-volume-high"></i> 播放發音
+        </button>
+    </div>
+
+    <!-- UI Notification Toast -->
+    <div id="toast" class="fixed top-20 right-6 bg-emerald-800 text-white px-4 py-2.5 rounded-lg shadow-xl text-xs font-medium hidden z-50 transition-all flex items-center gap-2">
+        <i class="fa-solid fa-circle-check text-emerald-300"></i>
+        <span id="toast-msg">已更新進度</span>
+    </div>
+
+    <script>
+        // 20 Articles Master Data
+        const articles = [
+            {
+                id: 1,
+                day: "Day 01",
+                domain: "治療關係與遠距諮商",
+                title: "Working Alliance and Symptom Reduction in Telehealth Psychotherapy",
+                journal: "Journal of Counseling Psychology (2025)",
+                abstract: "This empirical study examined the strength of the <span class='word-highlight' data-word='working alliance'>working alliance</span> in synchronous <span class='word-highlight' data-word='telehealth'>telehealth</span> psychotherapy compared to face-to-face sessions. Utilizing a longitudinal design with 180 adult clients presenting with mild-to-moderate anxiety, researchers evaluated <span class='word-highlight' data-word='dyadic'>dyadic</span> agreement on therapy goals. Results indicated that early alliance establishment significantly predicted overall <span class='word-highlight' data-word='symptom reduction'>symptom reduction</span>, mediated by mutual task agreement. The findings suggest that digital therapeutic environments do not inherently impede the formation of a robust clinical connection.",
+                terms: [
+                    { word: "working alliance", ipa: "/ˈwɜːrkɪŋ əˈlaɪəns/", pos: "n.", def: "工作盟友/治療聯盟（諮商師與個案建立之目標與任務共識）" },
+                    { word: "telehealth", ipa: "/ˈtel.i.helθ/", pos: "n.", def: "遠距醫療/遠距心理諮商" },
+                    { word: "dyadic", ipa: "/daɪˈæd.ɪk/", pos: "adj.", def: "雙向的/二元互動的（指諮商雙方）" },
+                    { word: "symptom reduction", ipa: "/ˈsɪmp.təm rɪˈdʌk.ʃən/", pos: "n.", def: "症狀減緩/緩和" }
+                ],
+                respTopic: "探討遠距同步心理諮商中「工作盟友（Working Alliance）」的強度及其對症狀減緩的預測力。",
+                respFinding: "研究發現早期的工作盟友建立能顯著預測個案焦慮症狀的減緩，且遠距形式並不會妨礙良好治療關係的形成。",
+                respInsight: "在遠距或多元諮商情境中，首要核心仍是建立穩固的合作關係與目標共識，技術工具只是媒介，關係才是改變的核心。",
+                respScript: "各位教授好，本篇研究主要探討「遠距諮商中工作盟友強度對個案焦慮症狀減緩」的影響。研究結果顯示，不論是實體或遠距，早期建立高質量的治療聯盟與目標共識，能顯著預測良好的諮商效果。這對我在諮商現場的啟發是：在評估不同諮商形式（如遠距或社區輔導）時，個案概念化的重點應放在如何建立安全的雙向連結與明確的合作目標，而非過度擔憂媒介的限制。"
+            },
+            {
+                id: 2,
+                day: "Day 02",
+                domain: "情緒調節與自我慈悲",
+                title: "Self-Compassion as a Buffer Against Emotion Dysregulation in Burnout",
+                journal: "Psychotherapy Research (2025)",
+                abstract: "This study investigated the <span class='word-highlight' data-word='mediating role'>mediating role</span> of <span class='word-highlight' data-word='self-compassion'>self-compassion</span> between severe <span class='word-highlight' data-word='emotion dysregulation'>emotion dysregulation</span> and psychological <span class='word-highlight' data-word='burnout'>burnout</span> among helping professionals. A sample of 240 practitioners completed self-report measures evaluating self-criticism, mindfulness, and emotional exhaustion. Structural equation modeling revealed that higher self-compassion significantly buffered against <span class='word-highlight' data-word='maladaptive coping strategies'>maladaptive coping strategies</span>, leading to enhanced emotional resilience.",
+                terms: [
+                    { word: "mediating role", ipa: "/ˈmiː.di.eɪ.tɪŋ roʊl/", pos: "n.", def: "中介角色/中介作用" },
+                    { word: "self-compassion", ipa: "/ˌself.kəmˈpæʃ.ən/", pos: "n.", def: "自我慈悲/自我關懷" },
+                    { word: "emotion dysregulation", ipa: "/ɪˈmoʊ.ʃən dɪsˌreɡ.jəˈleɪ.ʃən/", pos: "n.", def: "情緒調節失調/情緒控制障礙" },
+                    { word: "burnout", ipa: "/ˈbɜːrn.aʊt/", pos: "n.", def: "職業倦怠/身心耗竭" },
+                    { word: "maladaptive coping strategies", ipa: "/ˌmæl.əˈdæp.tɪv ˈkoʊ.pɪŋ/", pos: "n.", def: "適應不良的因應策略" }
+                ],
+                respTopic: "探討「自我慈悲（Self-Compassion）」在助人者情緒調節失調與身心耗竭（Burnout）之間的中介與緩衝作用。",
+                respFinding: "高自我慈悲能有效降低適應不良的因應策略，進而緩衝情緒失調所帶來的耗竭感受，提升情緒復原力。",
+                respInsight: "在面對高壓或挫折的個案（如教師、照顧者）時，協助其發展「自我慈悲」而非過度自我批判，是個案概念化與介入的關鍵切入點。",
+                respScript: "各位教授好，本篇研究主要探討「自我慈悲在情緒調節失調與職場身心耗竭間的中介機制」。研究結果顯示，培養自我慈悲能有效減少個案使用適應不良的因應方式，並發揮心理緩衝作用。這對我們在諮商現場進行情緒困擾或高壓族群（如教師或助人者）的概念化時，提示我們除了評估其壓力源外，更應評估其內部自我對話品質，引導個案從自我批判轉向自我關懷。"
+            },
+            {
+                id: 3,
+                day: "Day 03",
+                domain: "依附理論與青少年心理",
+                title: "Insecure Attachment and Internalizing Symptoms in Emerging Adults",
+                journal: "Journal of Youth and Adolescence (2024)",
+                abstract: "The present study explored how <span class='word-highlight' data-word='insecure attachment styles'>insecure attachment styles</span>—specifically <span class='word-highlight' data-word='anxious attachment'>anxious attachment</span> and avoidant attachment—influence <span class='word-highlight' data-word='internalizing symptoms'>internalizing symptoms</span> during late adolescence. Findings from a cross-sectional analysis demonstrated that anxious attachment was positively correlated with <span class='word-highlight' data-word='hypervigilance'>hypervigilance</span> and interpersonal sensitivity, whereas avoidant attachment predicted emotional suppression.",
+                terms: [
+                    { word: "insecure attachment styles", ipa: "/ɪn.sɪˈkjʊr əˈtætʃ.mənt/", pos: "n.", def: "不安全依附類型" },
+                    { word: "anxious attachment", ipa: "/ˈæŋk.ʃəs əˈtætʃ.mənt/", pos: "n.", def: "焦慮型依附" },
+                    { word: "internalizing symptoms", ipa: "/ɪnˈtɜːr.nə.laɪz.ɪŋ ˈsɪmp.təmz/", pos: "n.", def: "內化症狀（如焦慮、憂鬱、內縮）" },
+                    { word: "hypervigilance", ipa: "/ˌhaɪ.pɚˈvɪdʒ.əl.əns/", pos: "n.", def: "過度警覺/高度防備" }
+                ],
+                respTopic: "探討不安全依附類型（焦慮型與迴避型）對青少年後期「內化情緒症狀」的影響機制。",
+                respFinding: "焦慮型依附與高度警覺及人際敏感顯著相關，而迴避型依附則主要預測情緒壓抑傾向。",
+                respInsight: "針對青少年人際困擾，應從「依附需求」進行概念化，理解其行為背後是出於對被拋棄的恐懼（焦慮型）或是對受傷的防衛（迴避型）。",
+                respScript: "各位教授好，本篇研究主要探討「不安全依附風格對青年早期內化症狀（如焦慮與憂鬱）的影響」。研究結果指出，焦慮型依附者容易表現出人際過度警覺，而迴避型依附者則傾向情緒壓抑。這對我們在諮商現場進行青少年個案概念化時的啟發是：表面上的情緒內縮或過度敏感，背後常源於未被滿足的依附安全感，諮商師應提供矯正性情感體驗（Corrective Emotional Experience）。"
+            },
+            {
+                id: 4,
+                day: "Day 04",
+                domain: "認知行為治療 (CBT)",
+                title: "Targeting Cognitive Distortions and Rumination in Adolescent Depression",
+                journal: "Cognitive Therapy and Research (2025)",
+                abstract: "This randomized clinical trial evaluated the efficacy of a 10-week <span class='word-highlight' data-word='cognitive behavioral therapy'>Cognitive Behavioral Therapy (CBT)</span> protocol targeting <span class='word-highlight' data-word='cognitive distortions'>cognitive distortions</span> and depressive <span class='word-highlight' data-word='rumination'>rumination</span> among adolescents. Participants in the intervention condition exhibited a statistically significant decrease in <span class='word-highlight' data-word='automatic negative thoughts'>automatic negative thoughts</span> (ANTs) and showed higher self-efficacy during stressful events.",
+                terms: [
+                    { word: "cognitive behavioral therapy", ipa: "/ˈkɑːɡ.nə.tɪv bɪˈheɪ.vjɚ.əl θer.ə.pi/", pos: "n.", def: "認知行為治療 (CBT)" },
+                    { word: "cognitive distortions", ipa: "/ˈkɑːɡ.nə.tɪv dɪˈstɔːr.ʃənz/", pos: "n.", def: "認知歪曲/非理性信念" },
+                    { word: "rumination", ipa: "/ˌruː.məˈneɪ.ʃən/", pos: "n.", def: "反芻思考/反覆糾結" },
+                    { word: "automatic negative thoughts", ipa: "/ˌɑː.t̬əˈmæt̬.ɪk ˈneɡ.ə.tɪv θɑːts/", pos: "n.", def: "自動化負面想法 (ANTs)" }
+                ],
+                respTopic: "評估認知行為治療（CBT）在改善青少年憂鬱症狀中，對「認知歪曲」與「反芻思考」的介入療效。",
+                respFinding: "CBT 介入能顯著減少自動化負面想法（ANTs），並提升青少年面對壓力事件時的自我效能感。",
+                respInsight: "處理青少年憂鬱時，協助其辨識並鬆動「災難化」或「全有全無」的自動化思考，是恢復其控制感的重要步驟。",
+                respScript: "各位教授好，本篇研究主要探討「認知行為治療介入對降低青少年認知歪曲與反芻思考的實證效果」。研究結果顯示，介入能顯著減少個案的自動化負面想法並提升自我效能。這對諮商實務的啟發是，在面對青少年憂鬱個案時，可以透過認知重塑（Cognitive Restructuring）幫助個案察覺自己的思考陷阱，從反芻漩渦中拉回當下的現實因應能力。"
+            },
+            {
+                id: 5,
+                day: "Day 05",
+                domain: "反移情與臨床督導",
+                title: "Managing Countertransference in Novice Counselors: The Supervisory Role",
+                journal: "The Counseling Psychologist (2024)",
+                abstract: "This qualitative study explored how <span class='word-highlight' data-word='novice counselors'>novice counselors</span> recognize and navigate <span class='word-highlight' data-word='countertransference'>countertransference</span> triggers in individual therapy. Through thematic analysis of supervision transcripts, three core themes emerged: somatic awareness, fear of confrontation, and the vital role of the <span class='word-highlight' data-word='supervisory alliance'>supervisory alliance</span> in promoting <span class='word-highlight' data-word='clinical insight'>clinical insight</span>.",
+                terms: [
+                    { word: "novice counselors", ipa: "/ˈnɑː.vɪs ˈkaʊn.səl.ɚz/", pos: "n.", def: "新手諮商師/初階心理師" },
+                    { word: "countertransference", ipa: "/ˌkaʊn.tɚ.trænˈsfɝː.əns/", pos: "n.", def: "反移情（諮商師對個案無意識的情感反應）" },
+                    { word: "supervisory alliance", ipa: "/ˌsuː.pɚˈvaɪ.zɚ.i əˈlaɪ.əns/", pos: "n.", def: "督導聯盟（受督者與督導的合作信任關係）" },
+                    { word: "clinical insight", ipa: "/ˈklɪn.ɪ.kəl ˈɪn.saɪt/", pos: "n.", def: "臨床洞察力/覺察" }
+                ],
+                respTopic: "質性探討新手諮商師在個人晤談中如何辨識與處理「反移情（Countertransference）」。",
+                respFinding: "新手諮商師常藉由身體覺察發現反移情，而安全、包容的「督導聯盟」是促成其臨床洞察與專業成長的核心條件。",
+                respInsight: "專業學習中「自我覺察」至關重要；了解自己的盲點與反移情，能防止諮商師將個人的議題投射於個案身上。",
+                respScript: "各位教授好，本篇研究主要探討「新手心理師如何透過臨床督導來辨識與處理反移情」。研究結果強調，良好的督導聯盟能提供安全空間，促進心理師的身體覺察與臨床洞察。這對我的啟發是：身為受訓中的心理師，必須保持高度的自我覺察（Self-awareness），並善用督導資源來解析晤談中的反移情，確保諮商界線與個案的最佳利益。"
+            },
+            {
+                id: 6,
+                day: "Day 06",
+                domain: "創傷與創傷後成長",
+                title: "Adverse Childhood Experiences, Somatization, and Post-Traumatic Growth",
+                journal: "Journal of Traumatic Stress (2025)",
+                abstract: "This investigation examined the long-term impact of <span class='word-highlight' data-word='adverse childhood experiences'>Adverse Childhood Experiences (ACEs)</span> on adult <span class='word-highlight' data-word='somatization'>somatization</span> symptoms. Findings indicated that while high ACE scores correlated with chronic somatic distress, the presence of psychological <span class='word-highlight' data-word='resilience'>resilience</span> and active <span class='word-highlight' data-word='meaning-making'>meaning-making</span> facilitated significant <span class='word-highlight' data-word='post-traumatic growth'>post-traumatic growth</span>.",
+                terms: [
+                    { word: "adverse childhood experiences", ipa: "/ædˈvɝːs ˈtʃaɪld.hʊd/", pos: "n.", def: "童年逆境經驗 (ACEs)" },
+                    { word: "somatization", ipa: "/ˌsoʊ.mə.t̬əˈzeɪ.ʃən/", pos: "n.", def: "軀體化/身體化（心理痛苦轉化為身體症狀）" },
+                    { word: "resilience", ipa: "/rɪˈzɪl.jəns/", pos: "n.", def: "復原力/心理韌性" },
+                    { word: "meaning-making", ipa: "/ˈmiː.nɪŋ ˈmeɪ.kɪŋ/", pos: "n.", def: "意義建構" },
+                    { word: "post-traumatic growth", ipa: "/poʊst trɑːˈmæt̬.ɪk ɡroʊθ/", pos: "n.", def: "創傷後成長 (PTG)" }
+                ],
+                respTopic: "探討童年逆境經驗（ACEs）對成年後「軀體化症狀」的影響，以及創傷後成長（PTG）的促成因子。",
+                respFinding: "童年創傷常以身體痛苦（軀體化）的形式顯現，但心理復原力與「意義建構」能轉化創傷，促進創傷後成長。",
+                respInsight: "面對有慢性不明生理疼痛的個案，個案概念化應具備「創傷知情（Trauma-Informed）」觀點，關注身心連結並陪伴進行意義重新建構。",
+                respScript: "各位教授好，本篇研究主要探討「童年逆境經驗（ACEs）對軀體化症狀的長期影響及創傷後成長的條件」。研究顯示，童年創傷容易轉化為身體不適，但透過心理復原力與意義建構能帶來創傷後成長。這對諮商實務的啟發是：在評估身心症狀時，我們需要採取創傷知情視角，看見個案症狀背後的生存機制，協助個案在安全環境中賦予創傷經驗新的生命意義。"
+            },
+            {
+                id: 7,
+                day: "Day 07",
+                domain: "正念與照顧者減壓",
+                title: "Mindfulness-Based Interventions for Caregiver Burden and Self-Efficacy",
+                journal: "Mindfulness (2025)",
+                abstract: "A randomized controlled trial was conducted to evaluate a 8-week <span class='word-highlight' data-word='mindfulness-based stress reduction'>Mindfulness-Based Stress Reduction</span> (MBSR) program for family caregivers. Participants reported significant reductions in <span class='word-highlight' data-word='perceived stress'>perceived stress</span> and caregiver burden, paired with statistically significant increases in <span class='word-highlight' data-word='self-efficacy'>self-efficacy</span> and subjective well-being.",
+                terms: [
+                    { word: "mindfulness-based stress reduction", ipa: "/ˈmaɪnd.fəl.nəs strɛs/", pos: "n.", def: "正念減壓療法 (MBSR)" },
+                    { word: "perceived stress", ipa: "/pɚˈsiːvd strɛs/", pos: "n.", def: "知覺壓力/主觀感受壓力" },
+                    { word: "self-efficacy", ipa: "/ˌselfˈef.ə.kə.si/", pos: "n.", def: "自我效能感" }
+                ],
+                respTopic: "評估 8 週「正念減壓療法（MBSR）」對家庭照顧者負擔與自我效能感的改善效果。",
+                respFinding: "正念減壓介入能顯著降低照顧者的主觀知覺壓力與負擔感，並顯著提升其自我效能感與幸福感。",
+                respInsight: "正念取向的介入適合應用於長照或家庭照顧者，協助個案練習「不批判地活在當下」，減少因過度焦慮未來而產生的身心消耗。",
+                respScript: "各位教授好，本篇研究主要探討「正念減壓（MBSR）對降低家庭照顧者壓力與提升自我效能的成效」。研究結果證實，正念練習能有感減輕主觀知覺壓力並建立效能感。這對我們在諮商現場進行照顧者（如高齡家庭、特殊生家長）團體或個別輔導時的啟發是，正念是一項非常實用的工具，能幫助個案從長期照護的自動導航與焦慮模式中暫停，重新找回心理的穩固與主體性。"
+            },
+            {
+                id: 8,
+                day: "Day 08",
+                domain: "人本存在主義與悲傷諮商",
+                title: "Case Conceptualization in Humanistic-Existential Therapy for Complex Grief",
+                journal: "Journal of Humanistic Psychology (2024)",
+                abstract: "Integrating <span class='word-highlight' data-word='humanistic perspective'>humanistic</span> and existential frameworks, this clinical paper presents a comprehensive <span class='word-highlight' data-word='case conceptualization'>case conceptualization</span> of a client suffering from complicated grief. The intervention prioritized <span class='word-highlight' data-word='unconditional positive regard'>unconditional positive regard</span>, <span class='word-highlight' data-word='phenomenological exploration'>phenomenological exploration</span> of loss, and facilitating existential choice amidst isolation.",
+                terms: [
+                    { word: "humanistic perspective", ipa: "/hjuː.mæˈnɪs.tɪk/", pos: "n.", def: "人本主義觀點" },
+                    { word: "case conceptualization", ipa: "/keɪs kənˌsep.tʃu.ə.ləˈzeɪ.ʃən/", pos: "n.", def: "個案概念化" },
+                    { word: "unconditional positive regard", ipa: "/ˌʌn.kənˈdɪʃ.ən.əl/", pos: "n.", def: "無條件積極關懷" },
+                    { word: "phenomenological exploration", ipa: "/fə-nɒm-ə-nə-lɒj-i-kəl/", pos: "n.", def: "現象學式的主觀探索" }
+                ],
+                respTopic: "運用人本存在主義取向於複雜性悲傷（Complicated Grief）個案的「個案概念化」與臨床處遇。",
+                respFinding: "透過無條件積極關懷與現象學式的經驗探索，能協助喪親個案在孤獨與喪失感中重新尋得存在的選擇與意義。",
+                respInsight: "面對重大喪失個案，不宜急於進行症狀消除，而是給予充分的真誠陪伴，陪伴其經歷存在性的孤獨與意義重構。",
+                respScript: "各位教授好，本篇研究主要探討「人本存在學派在複雜性悲傷個案概念化中的應用」。研究強調透過無條件積極關懷與現象學式的探索，能讓個案的主觀痛苦被深層看見。這對我的啟發是：在面對重大失落的個案時，個案概念化不應僅止於症狀評估，更要以人本的態度建立安全容器，陪伴個案在極度的喪失中重新梳理生命的真實體驗與存在價值。"
+            },
+            {
+                id: 9,
+                day: "Day 09",
+                domain: "團體諮商與人際動力",
+                title: "Group Cohesion and Interpersonal Dynamics in Psychoeducational Groups",
+                journal: "Group Dynamics: Theory, Research, and Practice (2025)",
+                abstract: "This study examined how <span class='word-highlight' data-word='group cohesion'>group cohesion</span> and early <span class='word-highlight' data-word='interpersonal feedback'>interpersonal feedback</span> foster dynamic growth in a 12-week <span class='word-highlight' data-word='psychoeducational group'>psychoeducational group</span> for university students. Quantitative analyses revealed that mutual trust and constructive feedback significantly heightened members' <span class='word-highlight' data-word='assertiveness'>assertiveness</span> and reduced social avoidance.",
+                terms: [
+                    { word: "group cohesion", ipa: "/ɡruːp koʊˈhiː.ʒən/", pos: "n.", def: "團體凝聚力" },
+                    { word: "interpersonal feedback", ipa: "/ˌɪn.t̬ɚˈpɝː.sən.əl/", pos: "n.", def: "人際回饋/成員間互動回饋" },
+                    { word: "psychoeducational group", ipa: "/ˌsaɪ.koʊ.edʒ.əˈkeɪ.ʃən.əl/", pos: "n.", def: "心理教育團體" },
+                    { word: "assertiveness", ipa: "/əˈsɝː.t̬ɪv.nəs/", pos: "n.", def: "自我肯定/堅定自信的表達" }
+                ],
+                respTopic: "探討大學生心理教育團體中「團體凝聚力」與「人際回饋」對成員人際成長的影響。",
+                respFinding: "高團體凝聚力與建設性的人際回饋，能顯著提升成員的自我肯定能力（Assertiveness）並降低社交退縮。",
+                respInsight: "帶領團體時，諮商師應扮演「人際矯正鏡子」的催化者，善用此時此刻（Here and Now）的團體動力促進成員改變。",
+                respScript: "各位教授好，本篇研究主要探討「心理教育團體中團體凝聚力與人際回饋對成員人際能力的影響」。研究結果指出，良好的凝聚力與成員間的真實回饋能大幅增進個案的自我肯定表達。這對我在帶領學校或社區團體時的啟發是：團體領導者要能敏銳抓取「此時此刻（Here and Now）」的成員互動，營造安全的信任氛圍，讓團體成為成員嘗試新人際行為的實驗場。"
+            },
+            {
+                id: 10,
+                day: "Day 10",
+                domain: "多元文化與微歧視",
+                title: "Multicultural Counseling Competence and Microaggressions in Clinical Practice",
+                journal: "Journal of Multicultural Counseling and Development (2024)",
+                abstract: "Addressing <span class='word-highlight' data-word='mental health stigma'>mental health stigma</span> and racial <span class='word-highlight' data-word='microaggressions'>microaggressions</span> in minority populations, this study evaluated counselors' <span class='word-highlight' data-word='cultural humility'>cultural humility</span>. Findings underscore that therapists who practice active cultural self-reflection demonstrate higher <span class='word-highlight' data-word='multicultural competence'>multicultural competence</span> and lower rates of premature client drop-out.",
+                terms: [
+                    { word: "mental health stigma", ipa: "/ˈmen.təl helθ/", pos: "n.", def: "心理健康污名化" },
+                    { word: "microaggressions", ipa: "/ˌmaɪ.kroʊ.əˈɡreʃ.ənz/", pos: "n.", def: "微歧視/微侵犯" },
+                    { word: "cultural humility", ipa: "/ˈkʌl.tʃɚ.əl hjuːˈmɪl.ə.ti/", pos: "n.", def: "文化謙遜" },
+                    { word: "multicultural competence", ipa: "/ˌmʌl.tiˈkʌl.tʃɚ.əl/", pos: "n.", def: "多元文化諮商勝任能力" }
+                ],
+                respTopic: "探討心理師的「文化謙遜（Cultural Humility）」與「多元文化勝任能力」如何影響弱勢族群的求助與脫落率。",
+                respFinding: "具備主動文化自我反思與文化謙遜的心理師，能顯著降低諮商中的微歧視（Microaggressions），並降低個案早退/脫落率。",
+                respInsight: "諮商師需時刻對自身的特權、盲點與文化背景保持覺察，避免以主流文化視角強加於多元背景的個案身上。",
+                respScript: "各位教授好，本篇研究主要探討「心理師的文化謙遜與多元文化勝任能力對臨床效果的影響」。研究強調，諮商師的文化反思能減少臨床中的無意識微歧視，並提升結盟率。這對我在個案概念化上的啟發是：個案的困擾往往與其所處的社會文化脈絡（如性別、階級、文化族群）交織在一起，諮商師必須秉持文化謙遜，尊重並理解個案獨特的文化生命經驗。"
+            },
+            {
+                id: 11,
+                day: "Day 11",
+                domain: "接納承諾療法 (ACT)",
+                title: "Acceptance and Commitment Therapy for Chronic Pain and Psychological Flexibility",
+                journal: "Journal of Contextual Behavioral Science (2025)",
+                abstract: "This clinical trial investigated the efficacy of <span class='word-highlight' data-word='acceptance and commitment therapy'>Acceptance and Commitment Therapy (ACT)</span> in improving <span class='word-highlight' data-word='psychological flexibility'>psychological flexibility</span> among adults living with chronic pain. Results demonstrated that fostering <span class='word-highlight' data-word='experiential acceptance'>experiential acceptance</span> and value-based actions significantly decreased disability and improved quality of life.",
+                terms: [
+                    { word: "acceptance and commitment therapy", ipa: "/əkˈsep.təns ænd kəˈmɪt.mənt/", pos: "n.", def: "接納承諾療法 (ACT)" },
+                    { word: "psychological flexibility", ipa: "/ˌsaɪ.kəˈlɑː.dʒɪ.kəl flex.əˈbɪl.ə.ti/", pos: "n.", def: "心理靈活性" },
+                    { word: "experiential acceptance", ipa: "/ɪkˌspɪr.iˈen.ʃəl/", pos: "n.", def: "經驗接納" }
+                ],
+                respTopic: "評估接納承諾療法（ACT）對提升慢性疼痛個案「心理靈活性（Psychological Flexibility）」的療效。",
+                respFinding: "提升經驗接納與「價值澄清取向行動」，能在不強制改變疼痛強度的前提下，大幅降低生活障礙並提高生活品質。",
+                respInsight: "面對無法立即改變的現實痛苦，諮商介入應從「抗拒痛苦」轉為「接納並朝向價值目標前進」。",
+                respScript: "各位教授好，本篇研究主要探討「接納承諾療法（ACT）對提升慢性痛苦個案心理靈活性的成效」。研究發現，引導個案進行經驗接納與價值承諾行動，能有效改善生活品質。這對諮商實務的啟發是：許多時候個案的痛苦源於對不適體驗的「控制與抗拒」，個案概念化應協助個案轉向心理靈活性，學習帶著不完美與症狀，繼續投入有意義的生命價值中。"
+            },
+            {
+                id: 12,
+                day: "Day 12",
+                domain: "敘事治療與生涯轉換",
+                title: "Narrative Therapy for Identity Reconstruction in Career Transition",
+                journal: "Journal of Career Development (2024)",
+                abstract: "Focusing on mid-career professionals experiencing forced transition, this study evaluated a <span class='word-highlight' data-word='narrative therapy'>narrative therapy</span> protocol. By facilitating <span class='word-highlight' data-word='externalizing the problem'>externalizing the problem</span> and <span class='word-highlight' data-word='re-authoring'>re-authoring</span> dominant problem-saturated stories, clients successfully reconstructed their personal <span class='word-highlight' data-word='identity'>identity</span>.",
+                terms: [
+                    { word: "narrative therapy", ipa: "/ˈnær.ə.t̬ɪv θer.ə.pi/", pos: "n.", def: "敘事治療" },
+                    { word: "externalizing the problem", ipa: "/ɪkˈstɝː.nə.laɪz.ɪŋ/", pos: "n.", def: "外化問題" },
+                    { word: "re-authoring", ipa: "/riːˈɑː.θɚ.ɪŋ/", pos: "n.", def: "重寫生命故事/重新發聲" },
+                    { word: "identity", ipa: "/aɪˈden.t̬ə.t̬i/", pos: "n.", def: "自我認同/身分認同" }
+                ],
+                respTopic: "運用敘事治療（Narrative Therapy）協助中年生涯轉型者進行「身分重構（Identity Reconstruction）」與故事重寫。",
+                respFinding: "透過「問題外化」與「重寫生命故事（Re-authoring）」，個案能擺脫被問題充滿的主流敘事，重獲個人自主力量。",
+                respInsight: "在生涯轉換或中年危機個案中，協助其看見過去被忽略的成功例外，能重塑獨特且有力量的新自我。",
+                respScript: "各位教授好，本篇研究主要探討「敘事治療在協助中年生涯轉換個案進行自我認同重構的應用」。研究指出，透過問題外化與故事重寫，能幫助個案從被挫折定義的困境中鬆動。這對我在個案概念化上的啟发是：特別是在面對中年轉型或退休適應的個案時，諮商師應擔任雙重作者（Co-author），陪伴個案外化壓力，尋找微光與例外事件，重新撰寫具力量的新篇章。"
+            },
+            {
+                id: 13,
+                day: "Day 13",
+                domain: "親子互動與兒童外化行為",
+                title: "Parent-Child Interaction Therapy for Externalizing Behaviors",
+                journal: "Journal of Clinical Child & Adolescent Psychology (2025)",
+                abstract: "This randomized trial examined the long-term efficacy of <span class='word-highlight' data-word='parent-child interaction therapy'>Parent-Child Interaction Therapy (PCIT)</span> for young children presenting with severe <span class='word-highlight' data-word='externalizing behaviors'>externalizing behaviors</span>. Coaching parents in real-time via bug-in-the-ear technology fostered <span class='word-highlight' data-word='authoritative parenting'>authoritative parenting</span>.",
+                terms: [
+                    { word: "parent-child interaction therapy", ipa: "/ˈper.ənt tʃaɪld/", pos: "n.", def: "親子互動治療 (PCIT)" },
+                    { word: "externalizing behaviors", ipa: "/ɪkˈstɝː.nə.laɪz.ɪŋ/", pos: "n.", def: "外化行為（如衝動、攻擊）" },
+                    { word: "authoritative parenting", ipa: "/əˈθɔːr.ə.teɪ.t̬ɪv/", pos: "n.", def: "威信型/民主權威型教養" }
+                ],
+                respTopic: "評估「親子互動治療（PCIT）」對改善兒童外化行為（如衝動、對立反抗）與家長教養壓力的成效。",
+                respFinding: "實時教養指導能建立民主權威型的親職風格，顯著降低兒童的不合作行為並紓解家長育兒壓力。",
+                respInsight: "處理兒童行為問題，系統工作是不可或缺的，改變親職互動品質即改變了兒童的生態環境。",
+                respScript: "各位教授好，本篇研究主要探討「親子互動治療（PCIT）對改善兒童外化行為及教養壓力的臨床效果」。研究顯示，對親職互動進行實時指導，能有效增進威信型教養風格。這對我在諮商現場進行兒童與學校輔導的啟發是：兒童的問題行為常是家庭系統互動的反映，個案概念化必須納入系統觀點，提升家長教養效能與連結。"
+            },
+            {
+                id: 14,
+                day: "Day 14",
+                domain: "動機式晤談與行為改變",
+                title: "Motivational Interviewing in Fostering Readiness for Change",
+                journal: "Addictive Behaviors (2024)",
+                abstract: "Evaluating the mechanisms of <span class='word-highlight' data-word='motivational interviewing'>Motivational Interviewing (MI)</span>, this study analyzed client <span class='word-highlight' data-word='change talk'>change talk</span> and <span class='word-highlight' data-word='ambivalence'>ambivalence</span> in counseling. Counselors who adopted an non-confrontational style successfully reduced client <span class='word-highlight' data-word='resistance'>resistance</span>.",
+                terms: [
+                    { word: "motivational interviewing", ipa: "/ˌmoʊ.t̬əˈveɪ.ʃən.əl/", pos: "n.", def: "動機式晤談 (MI)" },
+                    { word: "change talk", ipa: "/tʃeɪndʒ tɔːk/", pos: "n.", def: "改變對話" },
+                    { word: "ambivalence", ipa: "/æmˈbɪv.ə.ləns/", pos: "n.", def: "矛盾心理" },
+                    { word: "resistance", ipa: "/rɪˈzɪs.təns/", pos: "n.", def: "抗拒/阻抗" }
+                ],
+                respTopic: "探討動機式晤談（MI）如何透過引發「改變對話（Change Talk）」來處理個案的矛盾心理與改變準備度。",
+                respFinding: "非對抗式的陪伴風格能降低個案抗拒，促進其矛盾心理的梳理，加速邁向實際行動階段。",
+                respInsight: "面對被動轉介或高抗拒個案，切忌強加目標，應尊重其內在矛盾，引導個案說出屬於他自己的改變理由。",
+                respScript: "各位教授好，本篇研究主要探討「動機式晤談（MI）如何處理個案的矛盾心理並引發改變對話」。研究結果指出，不與個案對立的非對抗態度能大幅降低個案阻抗。這對諮商實務的啟發是：特別在面對被動或非自願個案時，個案概念化應辨識其所處的改變階段，貼近個案的矛盾，邀請個案自行探索改變的內在動機。"
+            },
+            {
+                id: 15,
+                day: "Day 15",
+                domain: "內在家庭系統 (IFS)",
+                title: "Internal Family Systems and Self-Leadership in Complex Trauma",
+                journal: "Journal of Marital and Family Therapy (2025)",
+                abstract: "This qualitative paper explored the application of <span class='word-highlight' data-word='internal family systems'>Internal Family Systems (IFS)</span> therapy with survivors of complex developmental trauma. Process analysis revealed that helping clients access core <span class='word-highlight' data-word='self-leadership'>Self-leadership</span> allowed for the unburdening of protective parts and vulnerable <span class='word-highlight' data-word='exiles'>exiles</span>.",
+                terms: [
+                    { word: "internal family systems", ipa: "/ɪnˈtɝː.nəl ˈfæm.əl.i/", pos: "n.", def: "內在家庭系統 (IFS)" },
+                    { word: "self-leadership", ipa: "/self ˈliː.dɚ.ʃɪp/", pos: "n.", def: "真我領導力/Self 領導" },
+                    { word: "exiles", ipa: "/ˈek.saɪlz/", pos: "n.", def: "流放者（承載創傷痛苦與脆弱部分）" }
+                ],
+                respTopic: "探討「內在家庭系統（IFS）」學派在複雜性創傷處遇中，如何建立「真我領導（Self-Leadership）」與內在和解。",
+                respFinding: "連結內在的核心「Self（真我）」，能溫和地解開保護性部分的負擔，並療癒承載創傷的流放者。",
+                respInsight: "了解個案內在的矛盾與防衛行為其實都是為了保護內在脆弱部分，能深化個案概念化的慈悲視角。",
+                respScript: "各位教授好，本篇研究主要探討「內在家庭系統（IFS）在複雜創傷治療中喚醒真我領導力的歷程」。研究指出，個案內在極端或防衛的行為其實都是保護內在受傷部位的機制。這對我的啟發是：在個案概念化時，不將個案的症狀或防衛看作需要被除掉的問題，而是以非病理化的視角，陪伴個案認識內在不同部分，找回真我的內在穩定度。"
+            },
+            {
+                id: 16,
+                day: "Day 16",
+                domain: "替代性創傷與同理耗竭",
+                title: "Compassion Fatigue and Vicarious Traumatization Among School Counselors",
+                journal: "Journal of Counseling & Development (2024)",
+                abstract: "Surveying 310 practicing school counselors, this study evaluated predictors of <span class='word-highlight' data-word='compassion fatigue'>compassion fatigue</span> and <span class='word-highlight' data-word='vicarious traumatization'>vicarious traumatization</span>. Structural analysis demonstrated that organizational support, peer supervision, and intentional <span class='word-highlight' data-word='self-care practices'>self-care practices</span> served as significant protective buffers.",
+                terms: [
+                    { word: "compassion fatigue", ipa: "/kəmˈpæʃ.ən fəˈtiːɡ/", pos: "n.", def: "同理疲勞/慈悲疲勞" },
+                    { word: "vicarious traumatization", ipa: "/vaɪˈker.i.əs/", pos: "n.", def: "替代性創傷" },
+                    { word: "self-care practices", ipa: "/self ker/", pos: "n.", def: "自我照顧實踐" }
+                ],
+                respTopic: "調查學校輔導教師/諮商師的「同理疲勞（Compassion Fatigue）」與「替代性創傷（Vicarious Traumatization）」。",
+                respFinding: "組織支持、同儕督導與主動的自我照顧實踐，是防範助人者情緒耗竭與替代性創傷的最核心保護因子。",
+                respInsight: "心理師自身的心理健康與身心平衡是優質諮商的基礎，自我照顧（Self-care）並非奢華，而是倫理責任。",
+                respScript: "各位教授好，本篇研究主要探討「學校諮商師的同理疲勞、替代性創傷及其保護性因子」。研究強調，同儕督導與個人自我照顧實踐是防止身心耗竭的關鍵。這對我的啟發是：作為一名專業諮商師，保持專業效能的前提是良好的身心照顧與倫理覺察。在投入高張力的輔導實務時，我會主動建立同儕支持體系並落實自我照顧，確保能提供個案高品質且安全的諮商服務。"
+            },
+            {
+                id: 17,
+                day: "Day 17",
+                domain: "焦點解決短期諮商 (SFBT)",
+                title: "Solution-Focused Brief Therapy in High School Behavioral Interventions",
+                journal: "Journal of School Counseling (2025)",
+                abstract: "This outcome-based study investigated the utility of <span class='word-highlight' data-word='solution-focused brief therapy'>Solution-Focused Brief Therapy (SFBT)</span> with high school students presenting with attendance challenges. Utilizing the <span class='word-highlight' data-word='miracle question'>miracle question</span> and <span class='word-highlight' data-word='scaling questions'>scaling questions</span>, counselors successfully elicited student strengths.",
+                terms: [
+                    { word: "solution-focused brief therapy", ipa: "/səˈluː.ʃən ˈfoʊ.kəst/", pos: "n.", def: "焦點解決短期心理諮商 (SFBT)" },
+                    { word: "miracle question", ipa: "/ˈmɪr.ə.kəl/", pos: "n.", def: "奇蹟提問" },
+                    { word: "scaling questions", ipa: "/ˈskeɪ.lɪŋ/", pos: "n.", def: "評量提問/量尺提問" }
+                ],
+                respTopic: "評估「焦點解決短期諮商（SFBT）」應用於高中違規與缺曠課學生的輔導成效。",
+                respFinding: "善用奇蹟提問與量尺提問等焦點技術，能快速激發學生的優勢資源，並建構目標導向的具體改變行動。",
+                respInsight: "在學校體制或次數受限的情境中，聚焦於「解決方案與成功例外」比過度剖析問題成因更能快速為青少年注入效能感。",
+                respScript: "各位教授好，本篇研究主要探討「焦點解決短期諮商（SFBT）在高中學生行為介入中的效果」。研究顯示，透過奇蹟提問與量尺提問能有效激發個案的資源與自我效能。這對我在學校或短程輔導實務中的啟發是：面對時間有限的處遇情境，個案概念化可以多關注個案過去的例外經驗與優勢，陪伴個案設定微小且可執行的目標，建立成功的正向循環。"
+            },
+            {
+                id: 18,
+                day: "Day 18",
+                domain: "表達性藝術治療",
+                title: "Expressive Arts Therapy in Emotion Expression for Non-Verbal Youth",
+                journal: "Arts in Psychotherapy (2024)",
+                abstract: "This research explored the therapeutic benefits of <span class='word-highlight' data-word='expressive arts therapy'>expressive arts therapy</span> for adolescents struggling with emotional expression. Qualitative observations highlighted that non-verbal modalities provided a safe, <span class='word-highlight' data-word='containment'>containing</span> environment that bypassed intellectual defenses.",
+                terms: [
+                    { word: "expressive arts therapy", ipa: "/ɪkˈspres.ɪv ɑːrts/", pos: "n.", def: "表達性藝術治療" },
+                    { word: "containment", ipa: "/kənˈteɪn.mənt/", pos: "n.", def: "包容/容器作用" }
+                ],
+                respTopic: "探討「表達性藝術治療」對於難以用言語表達情緒之青少年的情緒疏解與療效。",
+                respFinding: "非言語的藝術創作媒介能繞過防衛，提供高度安全感的容器（Containment），促進情緒的宣洩與整合。",
+                respInsight: "面對語言表達意願低或理智化防衛強的個案，藝術、牌卡或隱喻是極佳的介入媒介，能讓潛意識情感自然流露。",
+                respScript: "各位教授好，本篇研究主要探討「表達性藝術治療對改善青少年情緒表達與宣洩的作用」。研究發現，非言語的媒材能繞過理智防衛，提供安全的心理容器。這對諮商實務的啟發是：當遇到防衛心強或無法以言語精準描述情感的個案時，個案概念化應考慮採用表達性媒材作為橋樑，讓個案在創作的隱喻中安全地表達與整理內在情緒。"
+            },
+            {
+                id: 19,
+                day: "Day 19",
+                domain: "催眠與身心轉化",
+                title: "Ego-State Therapy and Hypnotic Suggestions in Somatoform Disorders",
+                journal: "American Journal of Clinical Hypnosis (2025)",
+                abstract: "This clinical trial investigated combining <span class='word-highlight' data-word='ego-state therapy'>ego-state therapy</span> with therapeutic <span class='word-highlight' data-word='hypnotic suggestions'>hypnotic suggestions</span> for patients with chronic <span class='word-highlight' data-word='somatoform disorders'>somatoform disorders</span>. Results indicated that engaging with subconscious states reduced somatic distress.",
+                terms: [
+                    { word: "ego-state therapy", ipa: "/ˈiː.ɡoʊ steɪt/", pos: "n.", def: "自我狀態治療" },
+                    { word: "hypnotic suggestions", ipa: "/hɪpˈnɑː.t̬ɪk/", pos: "n.", def: "催眠暗示" },
+                    { word: "somatoform disorders", ipa: "/soʊˈmæt̬.ə.fɔːrm/", pos: "n.", def: "身體型障礙症/身心症" }
+                ],
+                respTopic: "探討「自我狀態治療（Ego-State Therapy）」結合「催眠暗示」於軀體化身心症狀個案的治療歷程。",
+                respFinding: "連結內在無意識與潛意識自我狀態，能顯著減緩身體不適症狀，促進未解的情緒整合。",
+                respInsight: "潛意識與身體語言蘊含豐富資訊；將催眠或深層意識轉化的學習嚴謹架構於學術與倫理中，能帶來極佳效果。",
+                respScript: "各位教授好，本篇研究主要探討「自我狀態治療與催眠暗示在軀體化症狀個案上的應用成效」。研究顯示，探索潛意識與內在自我狀態能有效減緩身體痛苦。這對我的啟發是：身體往往記憶著心理未解的創傷。這也回應了我過去自主進修催眠與心法學習的初衷——我期待進入高師大諮商所接受嚴謹的學術與倫理訓練，將對潛意識與身心連結的好奇，紮實地轉化為專業且安全的諮商介入能力。"
+            },
+            {
+                id: 20,
+                day: "Day 20",
+                domain: "諮商倫理與數位挑戰",
+                title: "Digital Ethics and Informed Consent in Online Counseling Platforms",
+                journal: "Ethics & Behavior (2025)",
+                abstract: "Analyzing contemporary ethical dilemmas in digital practice, this paper evaluated <span class='word-highlight' data-word='informed consent'>informed consent</span>, client confidentiality, and emergency protocols in text-based and video counseling. Findings highlight standard clinical guidelines to maintain boundaries in digital environments.",
+                terms: [
+                    { word: "informed consent", ipa: "/ɪnˈfɔːrmd kənˈsent/", pos: "n.", def: "知情同意（諮商倫理的核心）" }
+                ],
+                respTopic: "探討網路與數位諮商平台中的「知情同意（Informed Consent）」、保密與危機處置倫理規範。",
+                respFinding: "數位諮商需建立更高的倫理警覺，確保危機處置通報流程與資訊安全，以維持專業界線與隱私。",
+                respInsight: "不論諮商科技如何發展，倫理與個案福祉永遠是不可妥協的底線，心理師必須具備嚴謹的法律與倫理防線。",
+                respScript: "各位教授好，本篇研究主要探討「網路諮商平台中的知情同意與數位倫理挑戰」。研究強調，在新科技諮商環境中，更需要嚴格維護專業界線與危機處置倫理。這對我的啟發是：諮商不僅僅是助人的熱情，更是高度專業與法律倫理規範下的行為。不論面對任何新型態的諮商管道，恪守知情同意、保密與倫理架構，是保護個案與諮商師的最關鍵基石。"
+            }
+        ];
+
+        let currentArticleIndex = 0;
+        let completedArticles = JSON.parse(localStorage.getItem('nk_completed_articles') || '[]');
+        let favoriteArticles = JSON.parse(localStorage.getItem('nk_favorite_articles') || '[]');
+        let candidateNotes = JSON.parse(localStorage.getItem('nk_candidate_notes') || '{}');
+        
+        // Flashcard State
+        let allTermsList = [];
+        let currentCardIndex = 0;
+        let isCardFlipped = false;
+
+        // Exam Timer & Recording State
+        let examTimerInterval = null;
+        let examTimeLeft = 120; // 2 minutes
+        let isTimerRunning = false;
+        let mediaRecorder = null;
+        let audioChunks = [];
+        let isRecording = false;
+
+        // Initialize Speech Synthesis
+        function speakText(text, lang = 'en-US') {
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel();
+                const cleanText = text.replace(/<[^>]*>?/gm, '');
+                const utterance = new SpeechSynthesisUtterance(cleanText);
+                utterance.lang = lang;
+                const speed = parseFloat(document.getElementById('tts-speed').value || '0.9');
+                utterance.rate = lang === 'en-US' ? speed : 0.95;
+                window.speechSynthesis.speak(utterance);
+            } else {
+                showToast('您的瀏覽器不支援 SpeechSynthesis 發音。');
+            }
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toast-msg').innerText = msg;
+            toast.classList.remove('hidden');
+            setTimeout(() => toast.classList.add('hidden'), 2200);
+        }
+
+        // DOM Loaded Handler
+        document.addEventListener('DOMContentLoaded', () => {
+            initTheme();
+            populateDomainFilter();
+            buildAllTermsList();
+            renderSidebar();
+            loadArticle(0);
+            updateProgress();
+
+            // Search & Filter Listeners
+            document.getElementById('search-input').addEventListener('input', () => renderSidebar());
+            document.getElementById('domain-filter').addEventListener('change', () => renderSidebar());
+
+            // Dark Mode Toggle Listener
+            document.getElementById('theme-toggle').addEventListener('click', toggleDarkMode);
+
+            // Completion Checkbox
+            document.getElementById('mark-complete-checkbox').addEventListener('change', (e) => {
+                const artId = articles[currentArticleIndex].id;
+                if (e.target.checked) {
+                    if (!completedArticles.includes(artId)) completedArticles.push(artId);
+                    showToast('已完成研讀打卡！');
+                } else {
+                    completedArticles = completedArticles.filter(id => id !== artId);
+                    showToast('已取消打卡');
+                }
+                localStorage.setItem('nk_completed_articles', JSON.stringify(completedArticles));
+                renderSidebar();
+                updateProgress();
+            });
+
+            // Star Favorite Toggle
+            document.getElementById('star-btn').addEventListener('click', () => {
+                const artId = articles[currentArticleIndex].id;
+                if (favoriteArticles.includes(artId)) {
+                    favoriteArticles = favoriteArticles.filter(id => id !== artId);
+                    showToast('已取消收藏');
+                } else {
+                    favoriteArticles.push(artId);
+                    showToast('已加入星號收藏');
+                }
+                localStorage.setItem('nk_favorite_articles', JSON.stringify(favoriteArticles));
+                updateStarButton();
+                renderSidebar();
+            });
+
+            // Custom Note Auto Save
+            document.getElementById('custom-note-input').addEventListener('input', (e) => {
+                const artId = articles[currentArticleIndex].id;
+                candidateNotes[artId] = e.target.value;
+                localStorage.setItem('nk_candidate_notes', JSON.stringify(candidateNotes));
+            });
+
+            // Reset Progress Button
+            document.getElementById('reset-progress-btn').addEventListener('click', () => {
+                if (confirm('確定要清除所有打卡與研讀紀錄嗎？')) {
+                    completedArticles = [];
+                    localStorage.removeItem('nk_completed_articles');
+                    renderSidebar();
+                    updateProgress();
+                    document.getElementById('mark-complete-checkbox').checked = false;
+                    showToast('已重置閱讀紀錄');
+                }
+            });
+
+            // Read Full Abstract Button
+            document.getElementById('read-full-abstract-btn').addEventListener('click', () => {
+                const rawText = document.getElementById('abstract-content').innerText;
+                speakText(rawText, 'en-US');
+            });
+
+            // Read Script Button
+            document.getElementById('read-script-btn').addEventListener('click', () => {
+                const scriptText = document.getElementById('resp-script').innerText;
+                speakText(scriptText, 'zh-TW');
+            });
+
+            // Mobile Sidebar Toggle
+            document.getElementById('toggle-sidebar-btn').addEventListener('click', () => {
+                document.getElementById('sidebar').classList.toggle('hidden');
+            });
+        });
+
+        // Theme Switcher
+        function initTheme() {
+            if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+                document.getElementById('theme-toggle-icon').className = 'fa-solid fa-sun text-amber-300';
+            }
+        }
+
+        function toggleDarkMode() {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+                document.getElementById('theme-toggle-icon').className = 'fa-solid fa-moon text-base';
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+                document.getElementById('theme-toggle-icon').className = 'fa-solid fa-sun text-amber-300';
+            }
+        }
+
+        // Domain Filter Populator
+        function populateDomainFilter() {
+            const select = document.getElementById('domain-filter');
+            const domains = [...new Set(articles.map(a => a.domain))];
+            domains.forEach(d => {
+                const opt = document.createElement('option');
+                opt.value = d;
+                opt.innerText = d;
+                select.appendChild(opt);
+            });
+        }
+
+        // Render Article Sidebar
+        function renderSidebar() {
+            const listEl = document.getElementById('article-list');
+            listEl.innerHTML = '';
+            
+            const query = document.getElementById('search-input').value.toLowerCase().trim();
+            const selectedDomain = document.getElementById('domain-filter').value;
+
+            articles.forEach((art, idx) => {
+                const isFav = favoriteArticles.includes(art.id);
+                const isDone = completedArticles.includes(art.id);
+
+                // Filter logic
+                if (selectedDomain === 'FAVORITES' && !isFav) return;
+                if (selectedDomain !== 'ALL' && selectedDomain !== 'FAVORITES' && art.domain !== selectedDomain) return;
+
+                const isMatch = art.title.toLowerCase().includes(query) || 
+                                art.domain.toLowerCase().includes(query) || 
+                                art.day.toLowerCase().includes(query) ||
+                                art.terms.some(t => t.word.toLowerCase().includes(query) || t.def.includes(query));
+
+                if (!isMatch && query !== '') return;
+
+                const isActive = idx === currentArticleIndex;
+
+                const itemBtn = document.createElement('div');
+                itemBtn.className = `p-2.5 rounded-lg cursor-pointer transition flex items-center justify-between border ${
+                    isActive ? 'bg-indigo-50 dark:bg-slate-800 border-indigo-400 dark:border-amber-400 shadow-xs' : 'hover:bg-slate-50 dark:hover:bg-slate-800/50 border-transparent'
+                }`;
+
+                itemBtn.onclick = () => {
+                    loadArticle(idx);
+                    if (window.innerWidth < 768) {
+                        document.getElementById('sidebar').classList.add('hidden');
+                    }
+                };
+
+                itemBtn.innerHTML = `
+                    <div class="flex items-center space-x-2.5 overflow-hidden">
+                        <span class="text-[11px] px-2 py-0.5 rounded font-bold flex-shrink-0 ${isDone ? 'bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300' : 'bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300'}">
+                            ${art.day}
+                        </span>
+                        <div class="truncate text-xs">
+                            <span class="block font-medium truncate ${isActive ? 'text-indigo-900 dark:text-amber-300 font-bold' : 'text-slate-800 dark:text-slate-200'}">${art.title}</span>
+                            <span class="text-[10px] text-slate-500 dark:text-slate-400 block truncate">${art.domain}</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-1.5 flex-shrink-0">
+                        ${isFav ? '<i class="fa-solid fa-star text-amber-400 text-xs"></i>' : ''}
+                        ${isDone ? '<i class="fa-solid fa-circle-check text-emerald-500 text-xs"></i>' : ''}
+                    </div>
+                `;
+                listEl.appendChild(itemBtn);
+            });
+        }
+
+        // Load Single Article Data
+        function loadArticle(index) {
+            currentArticleIndex = index;
+            const art = articles[index];
+
+            document.getElementById('article-day').innerText = art.day;
+            document.getElementById('article-domain').innerText = art.domain;
+            document.getElementById('article-title').innerText = art.title;
+            document.getElementById('article-journal').innerText = art.journal;
+            document.getElementById('abstract-content').innerHTML = art.abstract;
+
+            // Completion check
+            document.getElementById('mark-complete-checkbox').checked = completedArticles.includes(art.id);
+            updateStarButton();
+
+            // Render Terminology
+            const termsEl = document.getElementById('terms-list');
+            termsEl.innerHTML = '';
+            art.terms.forEach(t => {
+                const card = document.createElement('div');
+                card.className = "bg-slate-50 dark:bg-slate-800/80 p-3 rounded-lg border border-slate-200 dark:border-slate-700/80 hover:border-indigo-300 transition flex justify-between items-start cursor-pointer shadow-2xs";
+                card.onclick = () => showPopover(t.word, t.ipa, t.def);
+                card.innerHTML = `
+                    <div class="pr-2">
+                        <div class="flex items-center space-x-2 flex-wrap">
+                            <strong class="text-xs md:text-sm text-indigo-950 dark:text-indigo-200">${t.word}</strong>
+                            <span class="text-[11px] text-slate-400 font-mono">${t.ipa}</span>
+                        </div>
+                        <p class="text-xs text-slate-600 dark:text-slate-300 mt-1">${t.def}</p>
+                    </div>
+                    <button class="text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 p-1 rounded hover:bg-indigo-100 dark:hover:bg-slate-700 flex-shrink-0" onclick="event.stopPropagation(); speakText('${t.word}')">
+                        <i class="fa-solid fa-volume-high text-xs"></i>
+                    </button>
+                `;
+                termsEl.appendChild(card);
+            });
+
+            // Bind Highlight Word Clicks
+            document.querySelectorAll('.word-highlight').forEach(el => {
+                el.onclick = (e) => {
+                    const word = e.target.getAttribute('data-word');
+                    const match = art.terms.find(t => t.word.toLowerCase() === word.toLowerCase());
+                    if (match) showPopover(match.word, match.ipa, match.def);
+                    else showPopover(word, '', '學術諮商專有名詞');
+                };
+            });
+
+            // Interview Sections
+            document.getElementById('resp-topic').innerText = art.respTopic;
+            document.getElementById('resp-finding').innerText = art.respFinding;
+            document.getElementById('resp-insight').innerText = art.respInsight;
+            document.getElementById('resp-script').innerText = art.respScript;
+
+            // Custom Candidate Note
+            document.getElementById('custom-note-input').value = candidateNotes[art.id] || '';
+
+            renderSidebar();
+            document.getElementById('article-view').scrollTop = 0;
+        }
+
+        function updateStarButton() {
+            const artId = articles[currentArticleIndex].id;
+            const starIcon = document.getElementById('star-icon');
+            if (favoriteArticles.includes(artId)) {
+                starIcon.className = 'fa-solid fa-star text-amber-400';
+            } else {
+                starIcon.className = 'fa-regular fa-star text-slate-400';
+            }
+        }
+
+        function updateProgress() {
+            const count = completedArticles.length;
+            const pct = Math.round((count / articles.length) * 100);
+            document.getElementById('progress-text').innerText = `進度: ${count}/${articles.length} (${pct}%)`;
+        }
+
+        // Popover Functionality
+        function showPopover(word, ipa, def) {
+            const pop = document.getElementById('word-popover');
+            document.getElementById('pop-word').innerText = word;
+            document.getElementById('pop-ipa').innerText = ipa;
+            document.getElementById('pop-def').innerText = def;
+            document.getElementById('pop-audio-btn').onclick = () => speakText(word);
+            pop.classList.remove('hidden');
+            speakText(word);
+        }
+
+        function closePopover() {
+            document.getElementById('word-popover').classList.add('hidden');
+        }
+
+        // --- FLASHCARD ENGINE ---
+        function buildAllTermsList() {
+            allTermsList = [];
+            articles.forEach(art => {
+                art.terms.forEach(t => {
+                    allTermsList.push({ ...t, day: art.day, domain: art.domain });
+                });
+            });
+        }
+
+        function openFlashcardModal() {
+            if (allTermsList.length === 0) buildAllTermsList();
+            currentCardIndex = 0;
+            renderFlashcard();
+            document.getElementById('flashcard-modal').classList.remove('hidden');
+        }
+
+        function closeFlashcardModal() {
+            document.getElementById('flashcard-modal').classList.add('hidden');
+        }
+
+        function renderFlashcard() {
+            isCardFlipped = false;
+            document.getElementById('flashcard-inner').classList.remove('rotate-y-180');
+            const term = allTermsList[currentCardIndex];
+            document.getElementById('card-word').innerText = term.word;
+            document.getElementById('card-ipa').innerText = term.ipa;
+            document.getElementById('card-def').innerText = term.def;
+            document.getElementById('card-counter').innerText = `${currentCardIndex + 1} / ${allTermsList.length}`;
+        }
+
+        function flipCard() {
+            isCardFlipped = !isCardFlipped;
+            const inner = document.getElementById('flashcard-inner');
+            if (isCardFlipped) inner.classList.add('rotate-y-180');
+            else inner.classList.remove('rotate-y-180');
+        }
+
+        function nextCard() {
+            if (currentCardIndex < allTermsList.length - 1) {
+                currentCardIndex++;
+                renderFlashcard();
+            }
+        }
+
+        function prevCard() {
+            if (currentCardIndex > 0) {
+                currentCardIndex--;
+                renderFlashcard();
+            }
+        }
+
+        function speakCardWord() {
+            speakText(allTermsList[currentCardIndex].word);
+        }
+
+        // --- MOCK EXAM SIMULATOR & AUDIO RECORDER ---
+        const examPrompts = [
+            "請針對今日摘要核心，用兩分鐘向口試委員簡述研究發現，並說明對你未來心理諮商個案概念化的啟發。",
+            "請說明本篇研究所揭示的諮商關係或治療機轉，並分享你未來在實務晤談中會如何運用？",
+            "若口試委員詢問此研究結果在多元背景或高壓個案上的限制與應用，你會如何說明？",
+            "請結合高師大諮商所的核心特色，說明這篇摘要的研究發現如何形塑你的諮商研究興趣？"
+        ];
+
+        function openMockExamModal() {
+            document.getElementById('mock-exam-modal').classList.remove('hidden');
+            randomizeExamQuestion();
+            resetExamTimer();
+        }
+
+        function closeMockExamModal() {
+            document.getElementById('mock-exam-modal').classList.add('hidden');
+            clearInterval(examTimerInterval);
+            if (isRecording && mediaRecorder) mediaRecorder.stop();
+        }
+
+        function randomizeExamQuestion() {
+            const rand = examPrompts[Math.floor(Math.random() * examPrompts.length)];
+            document.getElementById('exam-prompt').innerText = `"${rand}"`;
+        }
+
+        function resetExamTimer() {
+            clearInterval(examTimerInterval);
+            isTimerRunning = false;
+            examTimeLeft = 120; // 2 minutes
+            updateTimerDisplay();
+            document.getElementById('start-timer-btn').innerHTML = `<i class="fa-solid fa-play"></i> 開始回答倒數`;
+            document.getElementById('start-timer-btn').className = "text-xs bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2 rounded-lg font-bold flex items-center gap-1.5 shadow";
+        }
+
+        function toggleExamTimer() {
+            if (isTimerRunning) {
+                clearInterval(examTimerInterval);
+                isTimerRunning = false;
+                document.getElementById('start-timer-btn').innerHTML = `<i class="fa-solid fa-play"></i> 繼續倒數`;
+            } else {
+                isTimerRunning = true;
+                document.getElementById('start-timer-btn').innerHTML = `<i class="fa-solid fa-pause"></i> 暫停`;
+                examTimerInterval = setInterval(() => {
+                    if (examTimeLeft > 0) {
+                        examTimeLeft--;
+                        updateTimerDisplay();
+                    } else {
+                        clearInterval(examTimerInterval);
+                        isTimerRunning = false;
+                        showToast('口試模擬時間到！');
+                        speakText('時間到！講答結束。', 'zh-TW');
+                    }
+                }, 1000);
+            }
+        }
+
+        function updateTimerDisplay() {
+            const mins = Math.floor(examTimeLeft / 60).toString().padStart(2, '0');
+            const secs = (examTimeLeft % 60).toString().padStart(2, '0');
+            document.getElementById('exam-timer').innerText = `${mins}:${secs}`;
+        }
+
+        async function toggleRecordAnswer() {
+            const recBtn = document.getElementById('record-btn');
+            const playback = document.getElementById('recording-playback');
+
+            if (!isRecording) {
+                if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+                    showToast('您的瀏覽器不支援錄音功能。');
+                    return;
+                }
+                try {
+                    const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+                    mediaRecorder = new MediaRecorder(stream);
+                    audioChunks = [];
+
+                    mediaRecorder.ondataavailable = e => audioChunks.push(e.data);
+                    mediaRecorder.onstop = () => {
+                        const audioBlob = new Blob(audioChunks, { type: 'audio/mp3' });
+                        const audioUrl = URL.createObjectURL(audioBlob);
+                        playback.src = audioUrl;
+                        playback.classList.remove('hidden');
+                    };
+
+                    mediaRecorder.start();
+                    isRecording = true;
+                    recBtn.innerHTML = `<i class="fa-solid fa-stop"></i> 停止錄音`;
+                    recBtn.className = "text-xs bg-slate-700 hover:bg-slate-600 text-white px-4 py-2 rounded-lg font-bold flex items-center gap-1.5 shadow animate-pulse";
+                    showToast('錄音開始...');
+                } catch (err) {
+                    showToast('無法存取麥克風設備。');
+                }
+            } else {
+                mediaRecorder.stop();
+                isRecording = false;
+                recBtn.innerHTML = `<i class="fa-solid fa-microphone"></i> 重新錄音`;
+                recBtn.className = "text-xs bg-rose-600 hover:bg-rose-500 text-white px-4 py-2 rounded-lg font-bold flex items-center gap-1.5 shadow";
+                showToast('錄音結束，可進行對照聽評');
+            }
+        }
+    </script>
+</body>
+</html>
